@@ -1,0 +1,103 @@
+<#@ template tier="1" language="C#" #>
+
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.IO" #>
+
+<#@ import namespace="System.Collections.Generic"#>
+
+<#@ assembly name="C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\System.Windows.Forms.dll" #>
+<#@ import namespace="System.Windows" #>
+
+<Biml xmlns="http://schemas.varigence.com/biml.xsd">
+            <#  string[] files = Directory.GetFiles("D:\\Dota2DB\\Files", "*.csv", SearchOption.TopDirectoryOnly);
+                string[] headerRowData = new string[0];
+            //string[] files = {"test1", "test2"};
+            // Not ideal - find way of looping through only once
+            // Need to use similar logic to https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file
+            // Read through file, load array. Get column names from first line, then get max length of each column (LINQ?)
+            // Then create a flatfileformat format from this data
+            #>
+            
+            <FileFormats>
+                <Columns>
+            
+            <#  foreach (var file in files) { #>
+            
+                    <FileFormat Name="FileFormat_<#=Path.GetFileName(file.Replace(".csv", ""))#>" RowDelimiter="LF" ColumnNamesInFirstDataRow="true" IsUnicode="true">
+
+                    <# Console.WriteLine(file);
+    
+                    string[] lines = System.IO.File.ReadAllLines(file);
+                    Dictionary<string, int> maxLengths = new Dictionary<string, int>();
+                    Char delimiter = ',';
+    
+                    // Loop through all lines of the file
+                    for (int i = 0; i < lines.Count(); i++)
+                    {
+    
+                        // Handle first line separately
+                        if (i == 0)
+                        {
+    
+                            // Split line on delimiter
+                            headerRowData = lines[i].Split(delimiter);
+    
+                            // Loop through columns split from row data
+                            for (int j = 0; j < headerRowData.Count(); j++)
+                            {
+    
+                                // Add column name and max length of zero to dictionary
+                                maxLengths.Add(headerRowData[j], 0);
+                            }
+    
+                        }
+                        else
+                        {
+    
+                            // Split line on delimiter
+                            string[] rowData = lines[i].Split(delimiter);
+    
+                            // Loop through columns split from row data
+                            for (int j = 0; j < rowData.Count(); j++)
+                            {
+    
+                                // Find column name in dictionary and get current max value
+                                int currentMaxLength = maxLengths.Where(k => k.Key.Equals(headerRowData[j])).Select(k => k.Value).First();
+    
+                                // If current row has a longer length, then update the dictionary
+                                if (currentMaxLength < rowData[j].Length)
+                                {
+                                    maxLengths[headerRowData[j]] = rowData[j].Length;
+                                }
+                            }
+    
+                        }
+                    }
+    
+                    // Create Columns for file format
+                    foreach (KeyValuePair<string, int> kvp in maxLengths)
+                    { #>
+                        <Column Name=<#=kvp.Key#> DataType="String" Length="<#=kvp.Value#>" Delimiter="," CodePage="1252"/>
+                    <#}
+                    
+                    #>
+                    
+                        </Columns>
+                    </FileFormat>
+
+                <#}#> 
+            
+            </FileFormats>
+            
+            <Connections>
+            <OleDbConnection Name="TargetDatabase" ConnectionString="Data Source=.;Initial Catalog=Dota2;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" 
+                 CreateInProject="false"/>
+            <#foreach (var file in files) {#>
+            
+                <FlatFileConnection Name="<#=Path.GetFileName(file.Replace(".csv", ""))#>" FilePath="<#=file#>"/>
+                
+            <#}#> 
+            
+            </Connections>
+        
+</Biml>

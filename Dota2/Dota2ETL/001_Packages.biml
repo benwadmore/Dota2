@@ -1,0 +1,28 @@
+<#@ template tier="2" #>
+
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.IO" #>
+
+<#@ assembly name="C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\System.Windows.Forms.dll" #>
+<#@ import namespace="System.Windows" #>
+
+<Biml xmlns="http://schemas.varigence.com/biml.xsd">
+            <# string[] files = Directory.GetFiles("D:\\Dota2DB\\Files", "*.csv", SearchOption.AllDirectories);
+            //string[] files = {"test1", "test2"};
+            // Not ideal - find way of looping through only once
+            // Need to use similar logic to https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file
+            // Read through file, load array. Get column names from first line, then get max length of each column (LINQ?)
+            // Then create a flatfileformat format from this data
+            #>
+            
+            <Packages>
+                
+            <#foreach (var file in files) {#>
+            
+                <Package Name="<#=Path.GetFileName(file.Replace(".csv", ""))#>">
+                </Package>
+            <#}#>
+                
+            </Packages>
+        
+</Biml>
