@@ -16,7 +16,6 @@
             
                 <Package Name="<#=Path.GetFileName(file.Replace(".csv", ""))#>">
                     <Tasks>
-                        <ExecuteSQL Name="SQL Create Landing Table"></ExecuteSQL>
                         <Dataflow Name="DFT <#=Path.GetFileName(file.Replace(".csv", ""))#>">
                             <Transformations>
                                 <FlatFileSource Name="FF_SRC <#=Path.GetFileName(file.Replace(".csv", ""))#>" ConnectionName="FlatFileSource_<#=Path.GetFileName(file.Replace(".csv", ""))#>"></FlatFileSource>
