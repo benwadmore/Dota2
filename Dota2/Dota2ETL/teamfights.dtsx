@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DTS:Executable DTS:CreationDate="06/03/2018 21:11:32" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="BEN-PC" DTS:CreatorName="Ben" DTS:DTSID="{FC0AE376-1C35-45D6-9E28-44375C85D7CD}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="2057" DTS:ObjectName="teamfights" DTS:ProtectionLevel="0" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{851A53C2-409E-4909-B5D5-31E4B48BEAB0}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager DTS:CreationName="FLATFILE" DTS:DTSID="{3C3198BF-26D6-4BD2-B7B7-744B24C7AF70}" DTS:ObjectName="FlatFileSource_teamfights" DTS:refId="Package.ConnectionManagers[FlatFileSource_teamfights]">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:CodePage="1252" DTS:ColumnNamesInFirstDataRow="True" DTS:ConnectionString="D:\Dota2DB\Files\teamfights.csv" DTS:Format="Delimited" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:LocaleID="2057" DTS:RowDelimiter="_x000A_" DTS:TextQualifier="_x003C_none_x003E_" DTS:Unicode="True">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{18C47BD4-00E9-48F5-8B79-32D2B865ADB8}" DTS:MaximumWidth="5" DTS:ObjectName="match_id" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{709ED491-E38E-492B-B9BC-8DACE72466D9}" DTS:MaximumWidth="5" DTS:ObjectName="start" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{E6F6B655-7910-4778-9673-7C692D336475}" DTS:MaximumWidth="5" DTS:ObjectName="end" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{5878D28E-2A4A-418A-A6A6-AC641A329B8E}" DTS:MaximumWidth="5" DTS:ObjectName="last_death" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{C25B061D-1479-45F2-ADC6-018ABB68537D}" DTS:MaximumWidth="2" DTS:ObjectName="deaths" DTS:TextQualified="True"></DTS:FlatFileColumn>
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Executables>
+    <DTS:Executable DTS:CreationName="Microsoft.Pipeline" DTS:DTSID="{02D784DA-8C0D-4704-96D4-5CBBBA8C5D98}" DTS:ExecutableType="Microsoft.Pipeline" DTS:LocaleID="-1" DTS:ObjectName="DFT teamfights" DTS:refId="Package\DFT teamfights" DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:ObjectData>
+        <pipeline BLOBTempStoragePath="" bufferTempStoragePath="" name="pipelineXml" version="1">
+          <components>
+            <component componentClassID="Microsoft.FlatFileSource" contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1" localeId="2057" name="FF_SRC teamfights" refId="Package\DFT teamfights\FF_SRC teamfights" usesDispositions="true" version="1">
+              <connections>
+                <connection connectionManagerID="{3C3198BF-26D6-4BD2-B7B7-744B24C7AF70}:external" connectionManagerRefId="Package.ConnectionManagers[FlatFileSource_teamfights]" name="FlatFileConnection" refId="Package\DFT teamfights\FF_SRC teamfights.Connections[FlatFileConnection]"></connection>
+              </connections>
+              <outputs>
+                <output name="Output" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output]">
+                  <externalMetadataColumns isUsed="True">
+                    <externalMetadataColumn dataType="wstr" length="5" name="match_id" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].ExternalColumns[match_id]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="start" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].ExternalColumns[start]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="end" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].ExternalColumns[end]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="last_death" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].ExternalColumns[last_death]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="2" name="deaths" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].ExternalColumns[deaths]"></externalMetadataColumn>
+                  </externalMetadataColumns>
+                  <outputColumns>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].ExternalColumns[match_id]" length="5" lineageId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].Columns[match_id]" name="match_id" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].Columns[match_id]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].ExternalColumns[start]" length="5" lineageId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].Columns[start]" name="start" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].Columns[start]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].ExternalColumns[end]" length="5" lineageId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].Columns[end]" name="end" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].Columns[end]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].ExternalColumns[last_death]" length="5" lineageId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].Columns[last_death]" name="last_death" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].Columns[last_death]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].ExternalColumns[deaths]" length="2" lineageId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].Columns[deaths]" name="deaths" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Output].Columns[deaths]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                </output>
+                <output isErrorOut="true" name="Error" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Error]">
+                  <externalMetadataColumns></externalMetadataColumns>
+                  <outputColumns>
+                    <outputColumn dataType="nText" description="Flat File Source Error Output Column" lineageId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Error].Columns[Flat File Source Error Output Column]" name="Flat File Source Error Output Column" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Error].Columns[Flat File Source Error Output Column]"></outputColumn>
+                    <outputColumn dataType="i4" lineageId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Error].Columns[ErrorCode]" name="ErrorCode" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Error].Columns[ErrorCode]" specialFlags="1"></outputColumn>
+                    <outputColumn dataType="i4" lineageId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Error].Columns[ErrorColumn]" name="ErrorColumn" refId="Package\DFT teamfights\FF_SRC teamfights.Outputs[Error].Columns[ErrorColumn]" specialFlags="2"></outputColumn>
+                  </outputColumns>
+                </output>
+              </outputs>
+              <properties>
+                <property dataType="System.Boolean" description="Specifies whether zero-length columns are treated as null." name="RetainNulls">false</property>
+                <property dataType="System.String" description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated." name="FileNameColumnName"></property>
+              </properties>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

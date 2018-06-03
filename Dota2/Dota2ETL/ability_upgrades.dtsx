@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DTS:Executable DTS:CreationDate="06/03/2018 21:11:32" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="BEN-PC" DTS:CreatorName="Ben" DTS:DTSID="{636B44B6-8E97-4A6E-8CED-0E03EE191629}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="2057" DTS:ObjectName="ability_upgrades" DTS:ProtectionLevel="0" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{11816172-3598-4029-87A2-E1A9F7CEE2F6}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager DTS:CreationName="FLATFILE" DTS:DTSID="{9A3380F2-50C4-49AD-AD1A-083DD799F099}" DTS:ObjectName="FlatFileSource_ability_upgrades" DTS:refId="Package.ConnectionManagers[FlatFileSource_ability_upgrades]">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:CodePage="1252" DTS:ColumnNamesInFirstDataRow="True" DTS:ConnectionString="D:\Dota2DB\Files\ability_upgrades.csv" DTS:Format="Delimited" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:LocaleID="2057" DTS:RowDelimiter="_x000A_" DTS:TextQualifier="_x003C_none_x003E_" DTS:Unicode="True">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{4B2D5AF2-453F-46A7-9998-74877EEAE11F}" DTS:MaximumWidth="4" DTS:ObjectName="ability" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{0012B990-58E8-41FB-BA51-6BD907E9E0B6}" DTS:MaximumWidth="2" DTS:ObjectName="level" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{E054088A-FB61-4FC6-A3BC-CE62182A2389}" DTS:MaximumWidth="4" DTS:ObjectName="time" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{42B4B244-C0C2-4C09-8B7E-EDD7C3AB968C}" DTS:MaximumWidth="3" DTS:ObjectName="player_slot" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{27389092-03EE-482B-B463-49095246D96C}" DTS:MaximumWidth="5" DTS:ObjectName="match_id" DTS:TextQualified="True"></DTS:FlatFileColumn>
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Executables>
+    <DTS:Executable DTS:CreationName="Microsoft.Pipeline" DTS:DTSID="{7FA62D98-ED3E-4061-A1C4-BC9C140C2F37}" DTS:ExecutableType="Microsoft.Pipeline" DTS:LocaleID="-1" DTS:ObjectName="DFT ability_upgrades" DTS:refId="Package\DFT ability_upgrades" DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:ObjectData>
+        <pipeline BLOBTempStoragePath="" bufferTempStoragePath="" name="pipelineXml" version="1">
+          <components>
+            <component componentClassID="Microsoft.FlatFileSource" contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1" localeId="2057" name="FF_SRC ability_upgrades" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades" usesDispositions="true" version="1">
+              <connections>
+                <connection connectionManagerID="{9A3380F2-50C4-49AD-AD1A-083DD799F099}:external" connectionManagerRefId="Package.ConnectionManagers[FlatFileSource_ability_upgrades]" name="FlatFileConnection" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Connections[FlatFileConnection]"></connection>
+              </connections>
+              <outputs>
+                <output name="Output" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output]">
+                  <externalMetadataColumns isUsed="True">
+                    <externalMetadataColumn dataType="wstr" length="4" name="ability" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].ExternalColumns[ability]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="2" name="level" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].ExternalColumns[level]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="time" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].ExternalColumns[time]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="player_slot" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].ExternalColumns[player_slot]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="match_id" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].ExternalColumns[match_id]"></externalMetadataColumn>
+                  </externalMetadataColumns>
+                  <outputColumns>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].ExternalColumns[ability]" length="4" lineageId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].Columns[ability]" name="ability" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].Columns[ability]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].ExternalColumns[level]" length="2" lineageId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].Columns[level]" name="level" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].Columns[level]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].ExternalColumns[time]" length="4" lineageId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].Columns[time]" name="time" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].Columns[time]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].ExternalColumns[player_slot]" length="3" lineageId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].Columns[player_slot]" name="player_slot" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].Columns[player_slot]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].ExternalColumns[match_id]" length="5" lineageId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].Columns[match_id]" name="match_id" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Output].Columns[match_id]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                </output>
+                <output isErrorOut="true" name="Error" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Error]">
+                  <externalMetadataColumns></externalMetadataColumns>
+                  <outputColumns>
+                    <outputColumn dataType="nText" description="Flat File Source Error Output Column" lineageId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Error].Columns[Flat File Source Error Output Column]" name="Flat File Source Error Output Column" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Error].Columns[Flat File Source Error Output Column]"></outputColumn>
+                    <outputColumn dataType="i4" lineageId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Error].Columns[ErrorCode]" name="ErrorCode" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Error].Columns[ErrorCode]" specialFlags="1"></outputColumn>
+                    <outputColumn dataType="i4" lineageId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Error].Columns[ErrorColumn]" name="ErrorColumn" refId="Package\DFT ability_upgrades\FF_SRC ability_upgrades.Outputs[Error].Columns[ErrorColumn]" specialFlags="2"></outputColumn>
+                  </outputColumns>
+                </output>
+              </outputs>
+              <properties>
+                <property dataType="System.Boolean" description="Specifies whether zero-length columns are treated as null." name="RetainNulls">false</property>
+                <property dataType="System.String" description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated." name="FileNameColumnName"></property>
+              </properties>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

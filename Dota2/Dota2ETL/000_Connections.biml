@@ -11,23 +11,16 @@
 <Biml xmlns="http://schemas.varigence.com/biml.xsd">
             <#  string[] files = Directory.GetFiles("D:\\Dota2DB\\Files", "*.csv", SearchOption.TopDirectoryOnly);
                 string[] headerRowData = new string[0];
-            //string[] files = {"test1", "test2"};
-            // Not ideal - find way of looping through only once
-            // Need to use similar logic to https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file
-            // Read through file, load array. Get column names from first line, then get max length of each column (LINQ?)
-            // Then create a flatfileformat format from this data
             #>
             
             <FileFormats>
-                <Columns>
             
             <#  foreach (var file in files) { #>
             
-                    <FileFormat Name="FileFormat_<#=Path.GetFileName(file.Replace(".csv", ""))#>" RowDelimiter="LF" ColumnNamesInFirstDataRow="true" IsUnicode="true">
+                    <FlatFileFormat Name="FileFormat_<#=Path.GetFileName(file.Replace(".csv", ""))#>" RowDelimiter="LF" ColumnNamesInFirstDataRow="true" IsUnicode="true">
+                    <Columns>
 
-                    <# Console.WriteLine(file);
-    
-                    string[] lines = System.IO.File.ReadAllLines(file);
+                    <# string[] lines = System.IO.File.ReadAllLines(file);
                     Dictionary<string, int> maxLengths = new Dictionary<string, int>();
                     Char delimiter = ',';
     
@@ -77,13 +70,13 @@
                     // Create Columns for file format
                     foreach (KeyValuePair<string, int> kvp in maxLengths)
                     { #>
-                        <Column Name=<#=kvp.Key#> DataType="String" Length="<#=kvp.Value#>" Delimiter="," CodePage="1252"/>
+                        <Column Name="<#=kvp.Key#>" DataType="String" Length="<#=kvp.Value#>" Delimiter="," CodePage="1252"/>
                     <#}
                     
                     #>
                     
                         </Columns>
-                    </FileFormat>
+                    </FlatFileFormat>
 
                 <#}#> 
             
@@ -94,7 +87,7 @@
                  CreateInProject="false"/>
             <#foreach (var file in files) {#>
             
-                <FlatFileConnection Name="<#=Path.GetFileName(file.Replace(".csv", ""))#>" FilePath="<#=file#>"/>
+                <FlatFileConnection Name="FlatFileSource_<#=Path.GetFileName(file.Replace(".csv", ""))#>" FilePath="<#=file#>" FileFormat="FileFormat_<#=Path.GetFileName(file.Replace(".csv", ""))#>" />
                 
             <#}#> 
             

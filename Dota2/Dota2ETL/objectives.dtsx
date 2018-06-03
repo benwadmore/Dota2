@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DTS:Executable DTS:CreationDate="06/03/2018 21:11:32" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="BEN-PC" DTS:CreatorName="Ben" DTS:DTSID="{4749E72F-4B8D-4C27-8079-08D775E12975}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="2057" DTS:ObjectName="objectives" DTS:ProtectionLevel="0" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{EAC8CD87-CABB-4D9A-9AF1-9C9606C25A67}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager DTS:CreationName="FLATFILE" DTS:DTSID="{494E7A0C-3A9C-42FB-823D-B1659F67B0E6}" DTS:ObjectName="FlatFileSource_objectives" DTS:refId="Package.ConnectionManagers[FlatFileSource_objectives]">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:CodePage="1252" DTS:ColumnNamesInFirstDataRow="True" DTS:ConnectionString="D:\Dota2DB\Files\objectives.csv" DTS:Format="Delimited" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:LocaleID="2057" DTS:RowDelimiter="_x000A_" DTS:TextQualifier="_x003C_none_x003E_" DTS:Unicode="True">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{8A3FAF65-59D0-4161-BEE6-8A39481C9E09}" DTS:MaximumWidth="5" DTS:ObjectName="match_id" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{52CF8863-97BD-42BF-87B6-897459F5128F}" DTS:MaximumWidth="6" DTS:ObjectName="key" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{CEAEA600-1F3E-418E-9A0B-62E9B9FDE1D3}" DTS:MaximumWidth="2" DTS:ObjectName="player1" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{82A4E03B-2D21-4E5E-9C0C-33295641C481}" DTS:MaximumWidth="2" DTS:ObjectName="player2" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{5CAFEFC1-6CB3-4014-B5FF-2D8B5B56EEEB}" DTS:MaximumWidth="4" DTS:ObjectName="slot" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{F5D38A8B-1094-4825-B937-C9585F79E1FC}" DTS:MaximumWidth="26" DTS:ObjectName="subtype" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{00063FF3-0D32-42D8-ABD5-01C1D2D82905}" DTS:MaximumWidth="5" DTS:ObjectName="team" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{0427CD66-2CFC-42DA-BD03-1B3F5F33AAAE}" DTS:MaximumWidth="5" DTS:ObjectName="time" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{36DA1EC5-DC49-4CCA-A3C6-FB1C565C0A2F}" DTS:MaximumWidth="4" DTS:ObjectName="value" DTS:TextQualified="True"></DTS:FlatFileColumn>
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Executables>
+    <DTS:Executable DTS:CreationName="Microsoft.Pipeline" DTS:DTSID="{4253AAB4-F500-4035-9CA3-25B31C17EFD1}" DTS:ExecutableType="Microsoft.Pipeline" DTS:LocaleID="-1" DTS:ObjectName="DFT objectives" DTS:refId="Package\DFT objectives" DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:ObjectData>
+        <pipeline BLOBTempStoragePath="" bufferTempStoragePath="" name="pipelineXml" version="1">
+          <components>
+            <component componentClassID="Microsoft.FlatFileSource" contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1" localeId="2057" name="FF_SRC objectives" refId="Package\DFT objectives\FF_SRC objectives" usesDispositions="true" version="1">
+              <connections>
+                <connection connectionManagerID="{494E7A0C-3A9C-42FB-823D-B1659F67B0E6}:external" connectionManagerRefId="Package.ConnectionManagers[FlatFileSource_objectives]" name="FlatFileConnection" refId="Package\DFT objectives\FF_SRC objectives.Connections[FlatFileConnection]"></connection>
+              </connections>
+              <outputs>
+                <output name="Output" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output]">
+                  <externalMetadataColumns isUsed="True">
+                    <externalMetadataColumn dataType="wstr" length="5" name="match_id" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[match_id]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="key" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[key]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="2" name="player1" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[player1]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="2" name="player2" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[player2]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="slot" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[slot]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="26" name="subtype" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[subtype]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="team" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[team]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="time" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[time]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="value" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[value]"></externalMetadataColumn>
+                  </externalMetadataColumns>
+                  <outputColumns>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[match_id]" length="5" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[match_id]" name="match_id" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[match_id]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[key]" length="6" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[key]" name="key" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[key]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[player1]" length="2" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[player1]" name="player1" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[player1]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[player2]" length="2" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[player2]" name="player2" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[player2]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[slot]" length="4" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[slot]" name="slot" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[slot]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[subtype]" length="26" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[subtype]" name="subtype" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[subtype]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[team]" length="5" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[team]" name="team" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[team]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[time]" length="5" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[time]" name="time" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[time]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].ExternalColumns[value]" length="4" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[value]" name="value" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Output].Columns[value]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                </output>
+                <output isErrorOut="true" name="Error" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Error]">
+                  <externalMetadataColumns></externalMetadataColumns>
+                  <outputColumns>
+                    <outputColumn dataType="nText" description="Flat File Source Error Output Column" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Error].Columns[Flat File Source Error Output Column]" name="Flat File Source Error Output Column" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Error].Columns[Flat File Source Error Output Column]"></outputColumn>
+                    <outputColumn dataType="i4" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Error].Columns[ErrorCode]" name="ErrorCode" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Error].Columns[ErrorCode]" specialFlags="1"></outputColumn>
+                    <outputColumn dataType="i4" lineageId="Package\DFT objectives\FF_SRC objectives.Outputs[Error].Columns[ErrorColumn]" name="ErrorColumn" refId="Package\DFT objectives\FF_SRC objectives.Outputs[Error].Columns[ErrorColumn]" specialFlags="2"></outputColumn>
+                  </outputColumns>
+                </output>
+              </outputs>
+              <properties>
+                <property dataType="System.Boolean" description="Specifies whether zero-length columns are treated as null." name="RetainNulls">false</property>
+                <property dataType="System.String" description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated." name="FileNameColumnName"></property>
+              </properties>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

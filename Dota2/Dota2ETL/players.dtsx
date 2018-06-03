@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DTS:Executable DTS:CreationDate="06/03/2018 21:11:32" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="BEN-PC" DTS:CreatorName="Ben" DTS:DTSID="{E04961C3-EB58-4BDD-A732-7879A5B81ACB}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="2057" DTS:ObjectName="players" DTS:ProtectionLevel="0" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{36B44C93-DA4A-452B-B377-BDC3D3A8BC90}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager DTS:CreationName="FLATFILE" DTS:DTSID="{04CD040D-0C98-4278-9132-63015C2CC652}" DTS:ObjectName="FlatFileSource_players" DTS:refId="Package.ConnectionManagers[FlatFileSource_players]">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:CodePage="1252" DTS:ColumnNamesInFirstDataRow="True" DTS:ConnectionString="D:\Dota2DB\Files\players.csv" DTS:Format="Delimited" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:LocaleID="2057" DTS:RowDelimiter="_x000A_" DTS:TextQualifier="_x003C_none_x003E_" DTS:Unicode="True">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{D8F4EA3F-C698-4640-A735-E00089A9D451}" DTS:MaximumWidth="5" DTS:ObjectName="match_id" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{FEB72705-569A-4F0E-984F-17416849A70F}" DTS:MaximumWidth="6" DTS:ObjectName="account_id" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{B5D43090-6300-43C1-A67E-EA8CC5D96438}" DTS:MaximumWidth="3" DTS:ObjectName="hero_id" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{4D00755F-5219-4D5E-A463-C05026047D5E}" DTS:MaximumWidth="3" DTS:ObjectName="player_slot" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{C2A5CEF5-26C6-470F-B084-7A52F2D6911D}" DTS:MaximumWidth="5" DTS:ObjectName="gold" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{B915ABBA-DF5D-44C9-827A-EA24B188CB8C}" DTS:MaximumWidth="6" DTS:ObjectName="gold_spent" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{478AC935-3A00-4E78-A763-DD3121CCE985}" DTS:MaximumWidth="4" DTS:ObjectName="gold_per_min" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{714AA3D2-CD74-483C-B5C9-F57036C05E72}" DTS:MaximumWidth="4" DTS:ObjectName="xp_per_min" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{0748F27D-BBF1-48FA-98FE-F3753C688BF5}" DTS:MaximumWidth="2" DTS:ObjectName="kills" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{AB78A373-F6BA-4ED7-8461-575BF1287131}" DTS:MaximumWidth="2" DTS:ObjectName="deaths" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{1E380534-698D-42AC-8993-9828D411EEC1}" DTS:MaximumWidth="2" DTS:ObjectName="assists" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{15C11C26-42CD-44FF-8D7F-2EFEC272DDBE}" DTS:MaximumWidth="3" DTS:ObjectName="denies" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{D9A1572C-BFB7-4DDF-B5EE-DD2036FE4E1B}" DTS:MaximumWidth="4" DTS:ObjectName="last_hits" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{49393685-FF7A-4D97-A1C4-2EE7D9F5C7C7}" DTS:MaximumWidth="23" DTS:ObjectName="stuns" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{D5D95715-B741-4A1C-833F-075FDD0B85FD}" DTS:MaximumWidth="5" DTS:ObjectName="hero_damage" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{EAFFC0A5-97FC-4B3F-B9D1-DC5F7CF0FD4B}" DTS:MaximumWidth="5" DTS:ObjectName="hero_healing" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{AE37322C-4FA1-4F81-8CFA-60F487192EE7}" DTS:MaximumWidth="5" DTS:ObjectName="tower_damage" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{B8A07139-9F28-4029-832B-13864B486A1C}" DTS:MaximumWidth="3" DTS:ObjectName="item_0" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{F8C828D6-CA72-43C9-AD4A-E9A8DB6B3FC1}" DTS:MaximumWidth="3" DTS:ObjectName="item_1" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{E661B64D-15F1-4E86-AE2A-CB7DBE6C4FDD}" DTS:MaximumWidth="3" DTS:ObjectName="item_2" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{CA3E42C5-B928-4B56-99DB-80BE823A072B}" DTS:MaximumWidth="3" DTS:ObjectName="item_3" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{7354FB7A-9A2C-42CF-8037-77922A5B7F30}" DTS:MaximumWidth="3" DTS:ObjectName="item_4" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{90ED79C2-61EF-4568-8096-5C438E885C60}" DTS:MaximumWidth="3" DTS:ObjectName="item_5" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{8D5665CD-6D24-4849-A99D-7A9167FB4036}" DTS:MaximumWidth="2" DTS:ObjectName="level" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{CF26B039-963F-467B-A9B7-9E6F0B184E55}" DTS:MaximumWidth="1" DTS:ObjectName="leaver_status" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{B10E814B-5D96-4C33-AB82-F5703F9D57AD}" DTS:MaximumWidth="7" DTS:ObjectName="xp_hero" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{1DE4494C-AF01-4E95-8C41-9B2EF025C3B2}" DTS:MaximumWidth="7" DTS:ObjectName="xp_creep" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{49DFF88D-89F9-44C5-AF07-D2DF8E33D11E}" DTS:MaximumWidth="6" DTS:ObjectName="xp_roshan" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{7333F436-C05B-45BE-8132-1BFAAF8D9250}" DTS:MaximumWidth="7" DTS:ObjectName="xp_other" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{DBAE5F9B-4C94-49A3-AE07-81071A727072}" DTS:MaximumWidth="7" DTS:ObjectName="gold_other" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{E4CBC4D1-7E8D-481F-886F-FB121623C7F1}" DTS:MaximumWidth="8" DTS:ObjectName="gold_death" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{FC540103-45B6-4CE6-98EE-C517DF672932}" DTS:MaximumWidth="8" DTS:ObjectName="gold_buyback" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{B259DC68-0650-460A-A3F0-412C786B4B1B}" DTS:MaximumWidth="7" DTS:ObjectName="gold_abandon" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{2A5FEA53-8C0B-44FD-8096-2DF08DE23A60}" DTS:MaximumWidth="8" DTS:ObjectName="gold_sell" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{D9F186A4-00B8-4C58-BB30-5B9B8EDB8FEA}" DTS:MaximumWidth="6" DTS:ObjectName="gold_destroying_structure" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{F1B05AF9-4F4B-4F7E-9F7B-9B1E04EA4D23}" DTS:MaximumWidth="7" DTS:ObjectName="gold_killing_heros" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{075C030F-DFE4-4140-9B10-08D7C2C7AD82}" DTS:MaximumWidth="8" DTS:ObjectName="gold_killing_creeps" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{8CC3D988-614C-4A8A-9C40-3E04A0C30B97}" DTS:MaximumWidth="6" DTS:ObjectName="gold_killing_roshan" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{DC97E59E-CB41-49B6-8635-7CD0F27C0D57}" DTS:MaximumWidth="6" DTS:ObjectName="gold_killing_couriers" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{D73EE5CF-3A45-4FF3-A286-8C5D3ABF3CCA}" DTS:MaximumWidth="3" DTS:ObjectName="unit_order_none" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{B366482A-7090-4464-BFC3-7CE2BB3851C6}" DTS:MaximumWidth="7" DTS:ObjectName="unit_order_move_to_position" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{8A853058-8483-4AE9-BC95-8A4BC329BE82}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_move_to_target" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{A408F4F3-A395-4CC5-BAB5-BB8424DA45A6}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_attack_move" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{BA9AA703-C1F9-4DAC-A92E-81A1CEC9DB1F}" DTS:MaximumWidth="7" DTS:ObjectName="unit_order_attack_target" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{3DDAE1E1-FF62-46DC-AAF1-D32208957334}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_cast_position" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{8D04A84D-84B8-4CAD-88AE-C47ECE582759}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_cast_target" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{C4E9D801-70F1-4FA6-AA5E-F5C62ABC83F7}" DTS:MaximumWidth="5" DTS:ObjectName="unit_order_cast_target_tree" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{6E7647A4-7C17-40D6-8DB4-76A30EE72910}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_cast_no_target" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{0278D6D0-372B-4AAF-A180-53B9619A4402}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_cast_toggle" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{019A3629-3645-4983-BC0A-90B8C34EE2CB}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_hold_position" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{09A06313-95F8-4A0E-A750-BF83DF099E74}" DTS:MaximumWidth="5" DTS:ObjectName="unit_order_train_ability" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{CB71F153-12B3-4CB2-AD50-32DA5A515411}" DTS:MaximumWidth="5" DTS:ObjectName="unit_order_drop_item" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{B6C69843-57E9-48B6-B127-CE7921319D72}" DTS:MaximumWidth="4" DTS:ObjectName="unit_order_give_item" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{46EDA663-6964-4BC2-8F21-39C5FAEDF477}" DTS:MaximumWidth="5" DTS:ObjectName="unit_order_pickup_item" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{1266CF8C-0157-4CCB-9EC1-0A7B49C7F4C5}" DTS:MaximumWidth="5" DTS:ObjectName="unit_order_pickup_rune" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{1C842297-4F4E-4594-A7CB-485ACD123E6B}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_purchase_item" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{56A1A0EB-47D2-4445-BF74-F1C72080CF42}" DTS:MaximumWidth="4" DTS:ObjectName="unit_order_sell_item" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{C3E0C117-E2EA-4E3E-B559-9245C6ED98E5}" DTS:MaximumWidth="4" DTS:ObjectName="unit_order_disassemble_item" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{8C758FDB-BE83-47AB-A2FD-497B5B3879F1}" DTS:MaximumWidth="5" DTS:ObjectName="unit_order_move_item" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{F6D595B8-2AC5-474B-A2F7-5C9734BB42D3}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_cast_toggle_auto" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{A2BF59F2-9EA3-4416-9577-3D2B1B7FE996}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_stop" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="303" DTS:DTSID="{D7075943-6928-4469-BB7A-48B54F588447}" DTS:ObjectName="unit_order_taunt" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{1DFF9482-145A-4914-898D-C783BC457545}" DTS:MaximumWidth="4" DTS:ObjectName="unit_order_buyback" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{9A22958C-B149-4AE6-94F2-DDF332AFE156}" DTS:MaximumWidth="4" DTS:ObjectName="unit_order_glyph" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{0448A33C-6B00-4AC6-AC35-8D4B2BBEBBEF}" DTS:MaximumWidth="4" DTS:ObjectName="unit_order_eject_item_from_stash" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{060EB63B-5DCF-41E2-B4E5-E8AEC0D08760}" DTS:MaximumWidth="3" DTS:ObjectName="unit_order_cast_rune" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{07400247-F410-47A5-AB1E-1852F4F9A2B2}" DTS:MaximumWidth="5" DTS:ObjectName="unit_order_ping_ability" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{BF2B2EA8-B400-4867-AEA4-4E0F3CED26BF}" DTS:MaximumWidth="6" DTS:ObjectName="unit_order_move_to_direction" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="303" DTS:DTSID="{AD5D551C-A090-4DEB-8A9E-7C62CAE75940}" DTS:ObjectName="unit_order_patrol" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="303" DTS:DTSID="{F61546A8-4D1C-43A8-A35E-F566DEE8755A}" DTS:ObjectName="unit_order_vector_target_position" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="303" DTS:DTSID="{46461F6B-C163-4BBD-AB6D-9858B4E2934D}" DTS:ObjectName="unit_order_radar" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="303" DTS:DTSID="{4D73ACC4-A47E-4F5C-98AA-650F5DB97103}" DTS:ObjectName="unit_order_set_item_combine_lock" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="303" DTS:DTSID="{4DC6D9CF-A74E-4445-BC7D-5B894F9071C7}" DTS:ObjectName="unit_order_continue" DTS:TextQualified="True"></DTS:FlatFileColumn>
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Executables>
+    <DTS:Executable DTS:CreationName="Microsoft.Pipeline" DTS:DTSID="{4DD32E9A-F59F-4EE4-BE0B-B5BC8DAC164E}" DTS:ExecutableType="Microsoft.Pipeline" DTS:LocaleID="-1" DTS:ObjectName="DFT players" DTS:refId="Package\DFT players" DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:ObjectData>
+        <pipeline BLOBTempStoragePath="" bufferTempStoragePath="" name="pipelineXml" version="1">
+          <components>
+            <component componentClassID="Microsoft.FlatFileSource" contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1" localeId="2057" name="FF_SRC players" refId="Package\DFT players\FF_SRC players" usesDispositions="true" version="1">
+              <connections>
+                <connection connectionManagerID="{04CD040D-0C98-4278-9132-63015C2CC652}:external" connectionManagerRefId="Package.ConnectionManagers[FlatFileSource_players]" name="FlatFileConnection" refId="Package\DFT players\FF_SRC players.Connections[FlatFileConnection]"></connection>
+              </connections>
+              <outputs>
+                <output name="Output" refId="Package\DFT players\FF_SRC players.Outputs[Output]">
+                  <externalMetadataColumns isUsed="True">
+                    <externalMetadataColumn dataType="wstr" length="5" name="match_id" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[match_id]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="account_id" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[account_id]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="hero_id" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[hero_id]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="player_slot" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[player_slot]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="gold" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="gold_spent" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_spent]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="gold_per_min" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_per_min]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="xp_per_min" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[xp_per_min]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="2" name="kills" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[kills]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="2" name="deaths" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[deaths]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="2" name="assists" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[assists]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="denies" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[denies]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="last_hits" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[last_hits]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="23" name="stuns" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[stuns]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="hero_damage" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[hero_damage]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="hero_healing" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[hero_healing]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="tower_damage" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[tower_damage]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="item_0" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_0]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="item_1" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_1]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="item_2" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_2]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="item_3" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_3]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="item_4" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_4]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="item_5" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_5]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="2" name="level" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[level]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="1" name="leaver_status" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[leaver_status]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="7" name="xp_hero" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[xp_hero]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="7" name="xp_creep" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[xp_creep]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="xp_roshan" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[xp_roshan]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="7" name="xp_other" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[xp_other]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="7" name="gold_other" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_other]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="8" name="gold_death" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_death]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="8" name="gold_buyback" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_buyback]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="7" name="gold_abandon" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_abandon]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="8" name="gold_sell" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_sell]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="gold_destroying_structure" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_destroying_structure]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="7" name="gold_killing_heros" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_killing_heros]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="8" name="gold_killing_creeps" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_killing_creeps]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="gold_killing_roshan" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_killing_roshan]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="gold_killing_couriers" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_killing_couriers]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="unit_order_none" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_none]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="7" name="unit_order_move_to_position" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_move_to_position]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_move_to_target" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_move_to_target]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_attack_move" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_attack_move]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="7" name="unit_order_attack_target" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_attack_target]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_cast_position" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_position]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_cast_target" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_target]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="unit_order_cast_target_tree" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_target_tree]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_cast_no_target" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_no_target]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_cast_toggle" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_toggle]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_hold_position" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_hold_position]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="unit_order_train_ability" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_train_ability]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="unit_order_drop_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_drop_item]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="unit_order_give_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_give_item]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="unit_order_pickup_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_pickup_item]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="unit_order_pickup_rune" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_pickup_rune]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_purchase_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_purchase_item]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="unit_order_sell_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_sell_item]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="unit_order_disassemble_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_disassemble_item]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="unit_order_move_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_move_item]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_cast_toggle_auto" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_toggle_auto]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_stop" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_stop]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" name="unit_order_taunt" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_taunt]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="unit_order_buyback" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_buyback]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="unit_order_glyph" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_glyph]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="4" name="unit_order_eject_item_from_stash" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_eject_item_from_stash]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="3" name="unit_order_cast_rune" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_rune]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="5" name="unit_order_ping_ability" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_ping_ability]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="6" name="unit_order_move_to_direction" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_move_to_direction]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" name="unit_order_patrol" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_patrol]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" name="unit_order_vector_target_position" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_vector_target_position]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" name="unit_order_radar" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_radar]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" name="unit_order_set_item_combine_lock" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_set_item_combine_lock]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" name="unit_order_continue" refId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_continue]"></externalMetadataColumn>
+                  </externalMetadataColumns>
+                  <outputColumns>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[match_id]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[match_id]" name="match_id" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[match_id]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[account_id]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[account_id]" name="account_id" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[account_id]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[hero_id]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[hero_id]" name="hero_id" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[hero_id]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[player_slot]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[player_slot]" name="player_slot" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[player_slot]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold]" name="gold" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_spent]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_spent]" name="gold_spent" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_spent]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_per_min]" length="4" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_per_min]" name="gold_per_min" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_per_min]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[xp_per_min]" length="4" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[xp_per_min]" name="xp_per_min" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[xp_per_min]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[kills]" length="2" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[kills]" name="kills" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[kills]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[deaths]" length="2" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[deaths]" name="deaths" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[deaths]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[assists]" length="2" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[assists]" name="assists" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[assists]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[denies]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[denies]" name="denies" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[denies]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[last_hits]" length="4" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[last_hits]" name="last_hits" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[last_hits]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[stuns]" length="23" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[stuns]" name="stuns" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[stuns]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[hero_damage]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[hero_damage]" name="hero_damage" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[hero_damage]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[hero_healing]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[hero_healing]" name="hero_healing" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[hero_healing]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[tower_damage]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[tower_damage]" name="tower_damage" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[tower_damage]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_0]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_0]" name="item_0" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_0]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_1]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_1]" name="item_1" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_1]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_2]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_2]" name="item_2" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_2]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_3]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_3]" name="item_3" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_3]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_4]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_4]" name="item_4" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_4]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[item_5]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_5]" name="item_5" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[item_5]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[level]" length="2" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[level]" name="level" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[level]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[leaver_status]" length="1" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[leaver_status]" name="leaver_status" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[leaver_status]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[xp_hero]" length="7" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[xp_hero]" name="xp_hero" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[xp_hero]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[xp_creep]" length="7" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[xp_creep]" name="xp_creep" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[xp_creep]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[xp_roshan]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[xp_roshan]" name="xp_roshan" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[xp_roshan]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[xp_other]" length="7" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[xp_other]" name="xp_other" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[xp_other]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_other]" length="7" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_other]" name="gold_other" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_other]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_death]" length="8" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_death]" name="gold_death" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_death]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_buyback]" length="8" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_buyback]" name="gold_buyback" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_buyback]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_abandon]" length="7" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_abandon]" name="gold_abandon" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_abandon]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_sell]" length="8" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_sell]" name="gold_sell" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_sell]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_destroying_structure]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_destroying_structure]" name="gold_destroying_structure" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_destroying_structure]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_killing_heros]" length="7" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_killing_heros]" name="gold_killing_heros" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_killing_heros]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_killing_creeps]" length="8" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_killing_creeps]" name="gold_killing_creeps" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_killing_creeps]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_killing_roshan]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_killing_roshan]" name="gold_killing_roshan" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_killing_roshan]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[gold_killing_couriers]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_killing_couriers]" name="gold_killing_couriers" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[gold_killing_couriers]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_none]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_none]" name="unit_order_none" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_none]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_move_to_position]" length="7" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_move_to_position]" name="unit_order_move_to_position" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_move_to_position]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_move_to_target]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_move_to_target]" name="unit_order_move_to_target" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_move_to_target]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_attack_move]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_attack_move]" name="unit_order_attack_move" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_attack_move]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_attack_target]" length="7" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_attack_target]" name="unit_order_attack_target" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_attack_target]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_position]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_position]" name="unit_order_cast_position" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_position]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_target]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_target]" name="unit_order_cast_target" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_target]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_target_tree]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_target_tree]" name="unit_order_cast_target_tree" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_target_tree]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_no_target]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_no_target]" name="unit_order_cast_no_target" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_no_target]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_toggle]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_toggle]" name="unit_order_cast_toggle" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_toggle]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_hold_position]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_hold_position]" name="unit_order_hold_position" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_hold_position]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_train_ability]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_train_ability]" name="unit_order_train_ability" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_train_ability]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_drop_item]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_drop_item]" name="unit_order_drop_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_drop_item]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_give_item]" length="4" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_give_item]" name="unit_order_give_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_give_item]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_pickup_item]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_pickup_item]" name="unit_order_pickup_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_pickup_item]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_pickup_rune]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_pickup_rune]" name="unit_order_pickup_rune" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_pickup_rune]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_purchase_item]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_purchase_item]" name="unit_order_purchase_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_purchase_item]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_sell_item]" length="4" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_sell_item]" name="unit_order_sell_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_sell_item]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_disassemble_item]" length="4" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_disassemble_item]" name="unit_order_disassemble_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_disassemble_item]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_move_item]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_move_item]" name="unit_order_move_item" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_move_item]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_toggle_auto]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_toggle_auto]" name="unit_order_cast_toggle_auto" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_toggle_auto]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_stop]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_stop]" name="unit_order_stop" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_stop]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="nText" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_taunt]" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_taunt]" name="unit_order_taunt" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_taunt]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_buyback]" length="4" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_buyback]" name="unit_order_buyback" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_buyback]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_glyph]" length="4" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_glyph]" name="unit_order_glyph" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_glyph]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_eject_item_from_stash]" length="4" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_eject_item_from_stash]" name="unit_order_eject_item_from_stash" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_eject_item_from_stash]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_cast_rune]" length="3" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_rune]" name="unit_order_cast_rune" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_cast_rune]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_ping_ability]" length="5" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_ping_ability]" name="unit_order_ping_ability" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_ping_ability]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_move_to_direction]" length="6" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_move_to_direction]" name="unit_order_move_to_direction" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_move_to_direction]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="nText" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_patrol]" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_patrol]" name="unit_order_patrol" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_patrol]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="nText" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_vector_target_position]" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_vector_target_position]" name="unit_order_vector_target_position" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_vector_target_position]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="nText" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_radar]" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_radar]" name="unit_order_radar" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_radar]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="nText" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_set_item_combine_lock]" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_set_item_combine_lock]" name="unit_order_set_item_combine_lock" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_set_item_combine_lock]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="nText" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT players\FF_SRC players.Outputs[Output].ExternalColumns[unit_order_continue]" lineageId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_continue]" name="unit_order_continue" refId="Package\DFT players\FF_SRC players.Outputs[Output].Columns[unit_order_continue]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                </output>
+                <output isErrorOut="true" name="Error" refId="Package\DFT players\FF_SRC players.Outputs[Error]">
+                  <externalMetadataColumns></externalMetadataColumns>
+                  <outputColumns>
+                    <outputColumn dataType="nText" description="Flat File Source Error Output Column" lineageId="Package\DFT players\FF_SRC players.Outputs[Error].Columns[Flat File Source Error Output Column]" name="Flat File Source Error Output Column" refId="Package\DFT players\FF_SRC players.Outputs[Error].Columns[Flat File Source Error Output Column]"></outputColumn>
+                    <outputColumn dataType="i4" lineageId="Package\DFT players\FF_SRC players.Outputs[Error].Columns[ErrorCode]" name="ErrorCode" refId="Package\DFT players\FF_SRC players.Outputs[Error].Columns[ErrorCode]" specialFlags="1"></outputColumn>
+                    <outputColumn dataType="i4" lineageId="Package\DFT players\FF_SRC players.Outputs[Error].Columns[ErrorColumn]" name="ErrorColumn" refId="Package\DFT players\FF_SRC players.Outputs[Error].Columns[ErrorColumn]" specialFlags="2"></outputColumn>
+                  </outputColumns>
+                </output>
+              </outputs>
+              <properties>
+                <property dataType="System.Boolean" description="Specifies whether zero-length columns are treated as null." name="RetainNulls">false</property>
+                <property dataType="System.String" description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated." name="FileNameColumnName"></property>
+              </properties>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

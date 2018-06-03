@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DTS:Executable DTS:CreationDate="06/03/2018 21:11:32" DTS:CreationName="Microsoft.Package" DTS:CreatorComputerName="BEN-PC" DTS:CreatorName="Ben" DTS:DTSID="{E97F2653-F76C-4E02-8228-9E5AFF03EF02}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="" DTS:LocaleID="2057" DTS:ObjectName="match_outcomes" DTS:ProtectionLevel="0" DTS:refId="Package" DTS:VersionBuild="0" DTS:VersionGUID="{49DF2DE2-3926-4255-844B-57F36EFFEF74}" DTS:VersionMajor="0" xmlns:DTS="www.microsoft.com/SqlServer/Dts">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager DTS:CreationName="FLATFILE" DTS:DTSID="{F9A27CC3-08A1-45EA-82EE-45CC7309F768}" DTS:ObjectName="FlatFileSource_match_outcomes" DTS:refId="Package.ConnectionManagers[FlatFileSource_match_outcomes]">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager DTS:CodePage="1252" DTS:ColumnNamesInFirstDataRow="True" DTS:ConnectionString="D:\Dota2DB\Files\match_outcomes.csv" DTS:Format="Delimited" DTS:HeaderRowDelimiter="_x000D__x000A_" DTS:LocaleID="2057" DTS:RowDelimiter="_x000A_" DTS:TextQualifier="_x003C_none_x003E_" DTS:Unicode="True">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{72DDD364-F826-4C7A-9ADC-FF8B5D20A66E}" DTS:MaximumWidth="10" DTS:ObjectName="match_id" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{60BC7653-0425-4BBC-8C62-E9FA0774F436}" DTS:MaximumWidth="10" DTS:ObjectName="account_id_0" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{D8B11BCA-9075-4065-8D74-7F642DAD3833}" DTS:MaximumWidth="10" DTS:ObjectName="account_id_1" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{2147018C-B7D3-4825-A6B4-3258DCC061B5}" DTS:MaximumWidth="10" DTS:ObjectName="account_id_2" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{EEB88E9D-761C-406B-9F05-7B608779608A}" DTS:MaximumWidth="10" DTS:ObjectName="account_id_3" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{E645E38B-972B-4430-BF7D-E69740CF4E4C}" DTS:MaximumWidth="10" DTS:ObjectName="account_id_4" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{1DE4F372-A951-4C5F-9F6E-C177BFD2379C}" DTS:MaximumWidth="10" DTS:ObjectName="start_time" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{0FCAE8C6-D727-44C3-BCA5-7AB369C01C36}" DTS:MaximumWidth="2" DTS:ObjectName="parser_version" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{92D9B338-F023-45AD-918B-8FDAB06A3099}" DTS:MaximumWidth="1" DTS:ObjectName="win" DTS:TextQualified="True"></DTS:FlatFileColumn>
+            <DTS:FlatFileColumn DTS:ColumnDelimiter="_x002C_" DTS:ColumnType="Delimited" DTS:CreationName="" DTS:DataType="130" DTS:DTSID="{382A42B3-B4E7-462E-90F3-F56E3321564B}" DTS:MaximumWidth="1" DTS:ObjectName="rad" DTS:TextQualified="True"></DTS:FlatFileColumn>
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Executables>
+    <DTS:Executable DTS:CreationName="Microsoft.Pipeline" DTS:DTSID="{C12C5BD3-E7F4-4F3C-A5C3-E9373434F95E}" DTS:ExecutableType="Microsoft.Pipeline" DTS:LocaleID="-1" DTS:ObjectName="DFT match_outcomes" DTS:refId="Package\DFT match_outcomes" DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:ObjectData>
+        <pipeline BLOBTempStoragePath="" bufferTempStoragePath="" name="pipelineXml" version="1">
+          <components>
+            <component componentClassID="Microsoft.FlatFileSource" contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1" localeId="2057" name="FF_SRC match_outcomes" refId="Package\DFT match_outcomes\FF_SRC match_outcomes" usesDispositions="true" version="1">
+              <connections>
+                <connection connectionManagerID="{F9A27CC3-08A1-45EA-82EE-45CC7309F768}:external" connectionManagerRefId="Package.ConnectionManagers[FlatFileSource_match_outcomes]" name="FlatFileConnection" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Connections[FlatFileConnection]"></connection>
+              </connections>
+              <outputs>
+                <output name="Output" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output]">
+                  <externalMetadataColumns isUsed="True">
+                    <externalMetadataColumn dataType="wstr" length="10" name="match_id" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[match_id]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="10" name="account_id_0" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[account_id_0]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="10" name="account_id_1" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[account_id_1]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="10" name="account_id_2" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[account_id_2]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="10" name="account_id_3" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[account_id_3]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="10" name="account_id_4" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[account_id_4]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="10" name="start_time" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[start_time]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="2" name="parser_version" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[parser_version]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="1" name="win" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[win]"></externalMetadataColumn>
+                    <externalMetadataColumn dataType="wstr" length="1" name="rad" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[rad]"></externalMetadataColumn>
+                  </externalMetadataColumns>
+                  <outputColumns>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[match_id]" length="10" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[match_id]" name="match_id" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[match_id]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[account_id_0]" length="10" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[account_id_0]" name="account_id_0" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[account_id_0]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[account_id_1]" length="10" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[account_id_1]" name="account_id_1" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[account_id_1]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[account_id_2]" length="10" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[account_id_2]" name="account_id_2" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[account_id_2]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[account_id_3]" length="10" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[account_id_3]" name="account_id_3" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[account_id_3]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[account_id_4]" length="10" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[account_id_4]" name="account_id_4" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[account_id_4]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[start_time]" length="10" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[start_time]" name="start_time" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[start_time]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[parser_version]" length="2" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[parser_version]" name="parser_version" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[parser_version]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[win]" length="1" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[win]" name="win" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[win]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn dataType="wstr" errorOrTruncationOperation="Conversion" errorRowDisposition="FailComponent" externalMetadataColumnId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].ExternalColumns[rad]" length="1" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[rad]" name="rad" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Output].Columns[rad]" truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property dataType="System.Boolean" description="Indicates whether the column uses the faster, locale-neutral parsing routines." name="FastParse">false</property>
+                        <property dataType="System.Boolean" description="Indicates whether the data is in binary format." name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                </output>
+                <output isErrorOut="true" name="Error" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Error]">
+                  <externalMetadataColumns></externalMetadataColumns>
+                  <outputColumns>
+                    <outputColumn dataType="nText" description="Flat File Source Error Output Column" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Error].Columns[Flat File Source Error Output Column]" name="Flat File Source Error Output Column" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Error].Columns[Flat File Source Error Output Column]"></outputColumn>
+                    <outputColumn dataType="i4" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Error].Columns[ErrorCode]" name="ErrorCode" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Error].Columns[ErrorCode]" specialFlags="1"></outputColumn>
+                    <outputColumn dataType="i4" lineageId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Error].Columns[ErrorColumn]" name="ErrorColumn" refId="Package\DFT match_outcomes\FF_SRC match_outcomes.Outputs[Error].Columns[ErrorColumn]" specialFlags="2"></outputColumn>
+                  </outputColumns>
+                </output>
+              </outputs>
+              <properties>
+                <property dataType="System.Boolean" description="Specifies whether zero-length columns are treated as null." name="RetainNulls">false</property>
+                <property dataType="System.String" description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated." name="FileNameColumnName"></property>
+              </properties>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>
